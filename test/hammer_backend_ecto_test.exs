@@ -1,4 +1,4 @@
-defmodule HammerBackendEctoTest do
+defmodule Hammer.Backend.EctoTest do
   use ExUnit.Case
 
   test "trivial" do
