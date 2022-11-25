@@ -1,20 +1,30 @@
 defmodule HammerBackendEcto.Mixfile do
   use Mix.Project
 
+  @version "0.2.0"
+
   def project do
     [
       app: :hammer_backend_ecto,
       description: "Ecto backend for Hammer rate-limiter",
-      package: [name: :hammer_backend_ecto,
-                maintainers: ["Shane Kilkelly (shane@kilkelly.me)"],
-                licenses: ["MIT"],
-                links: %{"GitHub" => "https://github.com/ExHammer/hammer-backend-ecto"}],
+      package: [
+        name: :hammer_backend_ecto,
+        maintainers: ["Emmanuel Pinault", "Shane Kilkelly (shane@kilkelly.me)"],
+        licenses: ["MIT"],
+        links: %{
+          "GitHub" => "https://github.com/ExHammer/hammer-backend-ecto",
+          "Changelog" =>
+            "https://github.com/ExHammer/hammer-backend-ecto/blob/master/CHANGELOG.md"
+        }
+      ],
       source_url: "https://github.com/ExHammer/hammer-backend-ecto",
       homepage_url: "https://github.com/ExHammer/hammer-backend-ecto",
-      version: "0.1.0",
-      elixir: "~> 1.5",
-      start_permanent: Mix.env == :prod,
-      deps: deps()
+      version: "#{@version}",
+      elixir: "~> 1.12",
+      start_permanent: Mix.env() == :prod,
+      deps: deps(),
+      docs: docs(),
+      test_coverage: [summary: [threshold: 75]]
     ]
   end
 
@@ -25,10 +35,22 @@ defmodule HammerBackendEcto.Mixfile do
     ]
   end
 
+  def docs do
+    [
+      main: "overview",
+      extras: ["guides/Overview.md", "CHANGELOG.md"],
+      source_ref: "v#{@version}",
+      main: "overview",
+      formatters: ["html", "epub"]
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    [{:redix, "~> 0.6"},
-     {:mock, "~> 0.2.0", only: :test},
-     {:ex_doc, "~> 0.16", only: :dev}]
+    [
+      {:credo, "~> 1.6", only: [:dev, :test]},
+      {:dialyxir, "~> 1.1", only: [:dev], runtime: false},
+      {:ex_doc, "~> 0.16", only: :dev}
+    ]
   end
 end

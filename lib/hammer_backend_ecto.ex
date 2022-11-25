@@ -37,9 +37,9 @@ defmodule Hammer.Backend.Ecto do
   @doc """
   Record a hit in the bucket identified by `key`
   """
-  @spec count_hit(key::{bucket::integer, id::String.t}, now::integer)
-        :: {:ok, count::integer}
-         | {:error, reason::any}
+  @spec count_hit(key :: {bucket :: integer, id :: String.t()}, now :: integer) ::
+          {:ok, count :: integer}
+          | {:error, reason :: any}
   def count_hit(key, now) do
     GenServer.call(__MODULE__, {:count_hit, key, now})
   end
@@ -47,13 +47,12 @@ defmodule Hammer.Backend.Ecto do
   @doc """
   Retrieve information about the bucket identified by `key`
   """
-  @spec get_bucket(key::{bucket::integer, id::String.t})
-        :: {:ok, {key::{bucket::integer, id::String.t},
-                  count::integer,
-                  created::integer,
-                  updated::integer}}
-         | {:ok, nil}
-         | {:error, reason::any}
+  @spec get_bucket(key :: {bucket :: integer, id :: String.t()}) ::
+          {:ok,
+           {key :: {bucket :: integer, id :: String.t()}, count :: integer, created :: integer,
+            updated :: integer}}
+          | {:ok, nil}
+          | {:error, reason :: any}
   def get_bucket(key) do
     GenServer.call(__MODULE__, {:get_bucket, key})
   end
@@ -61,9 +60,9 @@ defmodule Hammer.Backend.Ecto do
   @doc """
   Delete all buckets associated with `id`.
   """
-  @spec delete_buckets(id::String.t)
-        :: {:ok, count_deleted::integer}
-         | {:error, reason::any}
+  @spec delete_buckets(id :: String.t()) ::
+          {:ok, count_deleted :: integer}
+          | {:error, reason :: any}
   def delete_buckets(id) do
     GenServer.call(__MODULE__, {:delete_buckets, id})
   end
@@ -88,5 +87,4 @@ defmodule Hammer.Backend.Ecto do
 
   def handle_info(:prune, state) do
   end
-
 end
