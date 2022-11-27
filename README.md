@@ -1,5 +1,7 @@
 # Hammer.Backend.Ecto
 
+[![Build Status](https://github.com/ExHammer/hammer-backend-ecto/actions/workflows/ci.yml/badge.svg)](https://github.com/ExHammer/hammer-backend-ecto/actions/workflows/ci.yml) [![Hex.pm](https://img.shields.io/hexpm/v/hammer_backend_ecto.svg)](https://hex.pm/packages/hammer_backend_ecto) [![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/hammer_backend_ecto)
+
 Ecto backend for the [Hammer](https://github.com/ExHammer/hammer) rate-limiter.
 
 ## Installation
