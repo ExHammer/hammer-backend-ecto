@@ -1,6 +1,8 @@
 # Hammer.Backend.Ecto
 
 [![Build Status](https://github.com/ExHammer/hammer-backend-ecto/actions/workflows/ci.yml/badge.svg)](https://github.com/ExHammer/hammer-backend-ecto/actions/workflows/ci.yml) [![Hex.pm](https://img.shields.io/hexpm/v/hammer_backend_ecto.svg)](https://hex.pm/packages/hammer_backend_ecto) [![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/hammer_backend_ecto)
+[![Total Download](https://img.shields.io/hexpm/dt/hammer-backend-ecto.svg)](https://hex.pm/packages/hammer-backend-ecto)
+[![License](https://img.shields.io/hexpm/l/hammer-backend-ecto.svg)](https://github.com/ExHammer/hammer-backend-ecto/blob/master/LICENSE.md)
 
 Ecto backend for the [Hammer](https://github.com/ExHammer/hammer) rate-limiter.
 
@@ -26,4 +28,4 @@ See the [Hammer Tutorial](https://hexdocs.pm/hammer/tutorial.html#content) for m
 
 ## Documentation
 
-On hexdocs: [https://hexdocs.pm/hammer_backend_ecto/api-reference.html](https://hexdocs.pm/hammer_backend_redis/api-reference.html)
+On hexdocs: [https://hexdocs.pm/hammer_backend_ecto/api-reference.html](https://hexdocs.pm/hammer_backend_ecto/api-reference.html)
