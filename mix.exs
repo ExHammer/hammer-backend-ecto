@@ -7,16 +7,6 @@ defmodule HammerBackendEcto.Mixfile do
     [
       app: :hammer_backend_ecto,
       description: "Ecto backend for Hammer rate-limiter",
-      package: [
-        name: :hammer_backend_ecto,
-        maintainers: ["Emmanuel Pinault", "Shane Kilkelly (shane@kilkelly.me)"],
-        licenses: ["MIT"],
-        links: %{
-          "GitHub" => "https://github.com/ExHammer/hammer-backend-ecto",
-          "Changelog" =>
-            "https://github.com/ExHammer/hammer-backend-ecto/blob/master/CHANGELOG.md"
-        }
-      ],
       source_url: "https://github.com/ExHammer/hammer-backend-ecto",
       homepage_url: "https://github.com/ExHammer/hammer-backend-ecto",
       version: "#{@version}",
@@ -24,6 +14,7 @@ defmodule HammerBackendEcto.Mixfile do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       docs: docs(),
+      package: package(),
       test_coverage: [summary: [threshold: 75]]
     ]
   end
@@ -51,6 +42,18 @@ defmodule HammerBackendEcto.Mixfile do
       {:credo, "~> 1.6", only: [:dev, :test]},
       {:dialyxir, "~> 1.1", only: [:dev], runtime: false},
       {:ex_doc, "~> 0.16", only: :dev}
+    ]
+  end
+
+  defp package do
+    [
+      name: :hammer_backend_ecto,
+      maintainers: ["Emmanuel Pinault", "Shane Kilkelly (shane@kilkelly.me)"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/ExHammer/hammer-backend-ecto",
+        "Changelog" => "https://github.com/ExHammer/hammer-backend-ecto/blob/master/CHANGELOG.md"
+      }
     ]
   end
 end
