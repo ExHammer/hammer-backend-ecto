@@ -48,7 +48,7 @@ defmodule HammerBackendEcto.Mixfile do
   defp package do
     [
       name: :hammer_backend_ecto,
-      maintainers: ["Emmanuel Pinault", "Shane Kilkelly (shane@kilkelly.me)"],
+      maintainers: ["Emmanuel Pinault", "June Kelly"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => "https://github.com/ExHammer/hammer-backend-ecto",
